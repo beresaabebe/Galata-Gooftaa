@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">GalataGooftaa</string>
+    <string name="galata_gooftaa">Galata Gooftaa</string>
+    <string name="share">Share</string>
+    <string name="about_us">About us</string>
+    <string name="more_apps">More apps</string>
+    <string name="rate">Rate</string>
+    <string name="check_update">Check update</string>
+    <string name="exit">Exit</string>
+    <string name="banner_ad_unit_id">ca-app-pub-8504401574247581/5143899281</string>
+    <string name="todo">Todo</string>
+</resources>
