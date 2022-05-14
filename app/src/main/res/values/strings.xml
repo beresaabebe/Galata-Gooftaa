@@ -7,6 +7,22 @@
     <string name="rate">Rate</string>
     <string name="check_update">Check update</string>
     <string name="exit">Exit</string>
+
     <string name="banner_ad_unit_id">ca-app-pub-8504401574247581/5143899281</string>
+    <string name="ads_unit_interstitial_test_unit">ca-app-pub-8504401574247581/3294016595</string>
+
     <string name="todo">Todo</string>
+    <string name="email">Email</string>
+    <string name="facebook">Facebook</string>
+    <string name="phone">Phone</string>
+    <string name="yoosaad">Yoosaad</string>
+    <string name="about_developer">About Developer</string>
+    <string name="galatoofi_barumsaa_amantaa">Galatoofi Barumsaa Amantaa</string>
+    <string name="sirnaa_qiddaasse_ortodooksii">Sirnaa Qiddaasse Ortodooksii</string>
+    <string name="faaruu_ortodooksii_tawaahido">Faaruu Ortodooksii Tawaahido</string>
+    <string name="faarsaa_cidhaa_ortodooksii">Faarsaa Cidhaa Ortodooksii</string>
+    <string name="kadhannaa_galata_maariyaam">Kadhannaa Galata Maariyaam</string>
+    <string name="faarsaa_cidha">Faarsaa Cidha</string>
+    <string name="barumsaa">Barumsaa</string>
+    <string name="galata_maariyaam">Galata Maariyaam</string>
 </resources>

@@ -34,7 +34,7 @@ public class KanWiixataKadhatamu extends OptionsMenuActivity {
             "\n" +
             "Galmee qajeelaa yaa Waaqayyo Gooftaa uumaa, naaf gadditee dhiifama kan taasistu, jireenyas kan kennitufi waan gaarii kan jaallattu sidha’o. Kanaf iyyuu ammeenyota kan ta’an diinota koo irraa na fayyisi, isaaniis sodaachuudhan kan ka’e lubbuun koo ollateettihoo. Kabajamaa maqaa keetiifi sirraan kan hafe hanga bara baraatti fayyina hin qabu, dhugummaan Ameen!";
 
-    String url = "https://firebasestorage.googleapis.com/v0/b/galatagooftaa-a83c5.appspot.com/o/kan%20yeroo%20hundaa.mp3?alt=media&token=ee19d78a-3246-4525-b2a3-6a376b7cfa78";
+    String url = "https://firebasestorage.googleapis.com/v0/b/galatagooftaa-a83c5.appspot.com/o/wiixata%20mixed.mp3?alt=media&token=ad8e1eb6-8a2e-4daa-8e62-bea3423c9490";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

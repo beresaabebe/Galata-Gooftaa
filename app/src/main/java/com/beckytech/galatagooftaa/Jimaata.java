@@ -4,11 +4,10 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.example.jean.jcplayer.view.JcPlayerView;
-
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-
 import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
 
 public class Jimaata extends OptionsMenuActivity {
 
@@ -60,10 +59,9 @@ public class Jimaata extends OptionsMenuActivity {
         MobileAds.initialize(this, initializationStatus -> {
         });
 
-        AdView mAdView = findViewById(R.id.adView);
+        AdView adView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
-
+        adView.loadAd(adRequest);
         textTitle = findViewById(R.id.textTitle);
         textTitle.setText(title);
 

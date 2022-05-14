@@ -4,8 +4,10 @@
     package="com.beckytech.galatagooftaa">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -18,13 +20,10 @@
         android:windowSoftInputMode="stateAlwaysHidden|adjustResize"
         tools:targetApi="31">
         <activity
+            android:name=".SanbataaXiqqaa"
+            android:exported="false" />
+        <activity
             android:name=".Dilbataa"
-            android:exported="false" />
-        <activity
-            android:name=".Dilbaata"
-            android:exported="false" />
-        <activity
-            android:name=".SnabataaDuraa"
             android:exported="false" />
         <activity
             android:name=".Jimaata"
@@ -56,17 +55,27 @@
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
+            android:exported="false">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+
         </activity>
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-8504401574247581~7514911754" />
+
     </application>
 
 </manifest>

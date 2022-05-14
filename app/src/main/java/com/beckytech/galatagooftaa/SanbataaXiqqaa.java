@@ -4,16 +4,13 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.example.jean.jcplayer.view.JcPlayerView;
-
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-
 import com.google.android.gms.ads.MobileAds;
 
-public class SanbataaDuraa extends OptionsMenuActivity {
+public class SanbataaXiqqaa extends OptionsMenuActivity {
 
     TextView textTitle, textContents;
-
     JcPlayerView jcPlayerView;
 
     String title = "Galata Gooftaa Kan Guyyaa Sanbata Duraa";
