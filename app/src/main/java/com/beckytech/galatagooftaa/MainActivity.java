@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
@@ -209,7 +210,33 @@ public class MainActivity extends AppCompatActivity {
 
         mBottomSheetBehavior = BottomSheetBehavior.from(mBottomSheet);
 
+        mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_HIDDEN);
+
+        mBottomSheetBehavior.addBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
+            @Override
+            public void onStateChanged(@NonNull View bottomSheet, int newState) {
+                if (BottomSheetBehavior.STATE_EXPANDED == newState) {
+                    floatingActionButton.animate().scaleX(0).scaleY(0).setDuration(0).start();
+                    floatingActionButton.setVisibility(View.GONE);
+                }
+                else if (BottomSheetBehavior.STATE_COLLAPSED == newState) {
+                    floatingActionButton.animate().scaleX(1).scaleY(1).setDuration(0).start();
+                    floatingActionButton.setVisibility(View.VISIBLE);
+                }
+                else if (BottomSheetBehavior.STATE_HIDDEN == newState) {
+                    floatingActionButton.animate().scaleX(1).scaleY(1).setDuration(0).start();
+                    floatingActionButton.setVisibility(View.VISIBLE);
+                }
+            }
+
+            @Override
+            public void onSlide(@NonNull View bottomSheet, float slideOffset) {
+
+            }
+        });
+
         bottomAppBar.setNavigationOnClickListener(view -> mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED));
+
 
         LinearLayout shareLayout = findViewById(R.id.share_layout);
         shareLayout.setOnClickListener(view -> {

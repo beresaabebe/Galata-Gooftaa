@@ -4,19 +4,19 @@ import static androidx.lifecycle.Lifecycle.Event.ON_START;
 
 import android.app.Activity;
 import android.app.Application;
-import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
-import androidx.annotation.NonNull;
+
 import androidx.lifecycle.LifecycleObserver;
-import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.OnLifecycleEvent;
 import androidx.lifecycle.ProcessLifecycleOwner;
+
 import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.FullScreenContentCallback;
 import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.appopen.AppOpenAd;
+
 import java.util.Date;
 
 /** Prefetches App Open Ads. */
@@ -25,8 +25,6 @@ public class AppOpenManager  implements LifecycleObserver, Application.ActivityL
     private static final String LOG_TAG = "AppOpenManager";
     private static final String AD_UNIT_ID = "ca-app-pub-8504401574247581/8888042485";
     private AppOpenAd appOpenAd = null;
-
-    private AppOpenAd.AppOpenAdLoadCallback loadCallback;
 
     private final MyApplication myApplication;
 
@@ -120,30 +118,40 @@ public class AppOpenManager  implements LifecycleObserver, Application.ActivityL
             return;
         }
 
-        loadCallback =
-                new AppOpenAd.AppOpenAdLoadCallback() {
-                    /**
-                     * Called when an app open ad has loaded.
-                     *
-                     * @param ad the loaded app open ad.
-                     */
-                    @Override
-                    public void onAdLoaded(AppOpenAd ad) {
-                        AppOpenManager.this.appOpenAd = ad;
-                        AppOpenManager.this.loadTime = (new Date()).getTime();
-                    }
+        /**
+         * Called when an app open ad has loaded.
+         *
+         * @param ad the loaded app open ad.
+         */
+        /**
+         * Called when an app open ad has failed to load.
+         *
+         * @param loadAdError the error.
+         */
+        // Handle the error.
+        AppOpenAd.AppOpenAdLoadCallback loadCallback = new AppOpenAd.AppOpenAdLoadCallback() {
+            /**
+             * Called when an app open ad has loaded.
+             *
+             * @param ad the loaded app open ad.
+             */
+            @Override
+            public void onAdLoaded(AppOpenAd ad) {
+                AppOpenManager.this.appOpenAd = ad;
+                AppOpenManager.this.loadTime = (new Date()).getTime();
+            }
 
-                    /**
-                     * Called when an app open ad has failed to load.
-                     *
-                     * @param loadAdError the error.
-                     */
-                    @Override
-                    public void onAdFailedToLoad(LoadAdError loadAdError) {
-                        // Handle the error.
-                    }
+            /**
+             * Called when an app open ad has failed to load.
+             *
+             * @param loadAdError the error.
+             */
+            @Override
+            public void onAdFailedToLoad(LoadAdError loadAdError) {
+                // Handle the error.
+            }
 
-                };
+        };
         AdRequest request = getAdRequest();
         AppOpenAd.load(
                 myApplication, AD_UNIT_ID, request,

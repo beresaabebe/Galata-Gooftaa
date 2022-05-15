@@ -1,6 +1,8 @@
 package com.beckytech.galatagooftaa;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.webkit.WebView;
@@ -8,6 +10,8 @@ import android.webkit.WebViewClient;
 import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -47,6 +51,11 @@ public class AboutUs extends AppCompatActivity {
         LinearLayout phone = findViewById(R.id.phone);
         phone.setOnClickListener(view -> {
             Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + "+251917361283"));
+            if (ContextCompat.checkSelfPermission(AboutUs.this, Manifest.permission.CALL_PHONE)
+            != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(AboutUs.this, new String[]{Manifest.permission.CALL_PHONE},
+                        1);
+            }
             startActivity(intent);
         });
 
